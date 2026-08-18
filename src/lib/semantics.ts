@@ -63,7 +63,7 @@ export function fmtValue(unit: Unit, v: number): string {
   switch (unit) {
     case "usd":
       if (Math.abs(v) >= 1_000_000) return `$${(v / 1_000_000).toFixed(1)}M`;
-      if (Math.abs(v) >= 1_000) return `$${Math.round(v / 1_000)}k`;
+      if (Math.abs(v) >= 10_000) return `$${Math.round(v / 1_000)}k`;
       return `$${Math.round(v).toLocaleString("en-US")}`;
     case "pct":
       return `${v.toFixed(1)}%`;
@@ -101,7 +101,7 @@ export function narrative(def: MetricDef, val: MetricValue): string {
 
   // validation: never emit "below target" when the value beats the target
   if (g >= 0) {
-    return `${def.label} at ${fmtValue(def.unit, v)} meets the ${def.targetBasis.toLowerCase()} of ${fmtValue(def.unit, def.target)} (${gapText} ${rel} it).`;
+    return `${def.label} at ${fmtValue(def.unit, v)} meets the target of ${fmtValue(def.unit, def.target)} (${gapText} ${rel} it; basis: ${def.targetBasis}).`;
   }
-  return `${def.label} at ${fmtValue(def.unit, v)} is ${gapText} ${relBad} the ${def.targetBasis.toLowerCase()} of ${fmtValue(def.unit, def.target)}.`;
+  return `${def.label} at ${fmtValue(def.unit, v)} is ${gapText} ${relBad} the target of ${fmtValue(def.unit, def.target)} (basis: ${def.targetBasis}).`;
 }
