@@ -1,0 +1,183 @@
+/**
+ * Kinetic Design Tokens
+ * Source of truth: Figma "Kinetic Platform - Atomic Library of Elements"
+ * (fileKey QWpZtLfVsUjbc99Lj3JJwJ, page "Kinetic Colors (Dark Theme)", 110 variables)
+ *
+ * RULES (from the Atomic Library showcase):
+ *  - brand/* (orange) = brand-led moments only: ONE primary button per view,
+ *    hero CTAs, active tab underline, brand pills. NEVER data series, NEVER
+ *    checked controls.
+ *  - accent/interactive (indigo) = ALL interaction state: focus rings, selection,
+ *    checked checkboxes/switches, active borders.
+ *  - semantic/* = status vs target only. category/*-chart = data series only.
+ *  - Gradients never on text, borders, or small controls.
+ *
+ * Naming: figma "group/name" becomes --color-group-name (1:1 traceable).
+ */
+
+@theme {
+  /* ---- bg ---- */
+  --color-bg-page: #0b1120;
+  --color-bg-card: #131d33;
+  --color-bg-floating: #1f2e51;
+  --color-bg-overlay: #0a0f1acc;
+  --color-bg-surface-deep: #05070e;
+  --color-bg-surface-subtle: #1b2848;
+  --color-bg-surface-muted: #23345a;
+  --color-bg-surface-emphasis: #2c3f6c;
+  --color-bg-surface-strong: #354a7f;
+  --color-bg-transparent: #00000000;
+
+  /* ---- text ---- */
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary-strong: #e2eaf0;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #afbccd;
+  --color-text-muted: #94a3b8;
+  --color-text-placeholder: #64748b;
+  --color-text-decor: #475569;
+  --color-text-disabled: #475569d9;
+  --color-text-disabled-subtle: #334155;
+  --color-text-inverse: #0f172a;
+  --color-text-interactive: #6366f1;
+
+  /* ---- icon ---- */
+  --color-icon-primary: #f1f5f9;
+  --color-icon-secondary: #cbd5e1;
+  --color-icon-tertiary: #94a3b8;
+  --color-icon-disabled: #47556966;
+  --color-icon-disabled-strong: #47556999;
+  --color-icon-inverse: #0f172a;
+  --color-icon-interactive: #6366f1;
+
+  /* ---- lines / borders ---- */
+  --color-lines-section: #94a3b859;
+  --color-lines-hairline: #94a3b814;
+  --color-lines-card: #94a3b82e;
+  --color-border-default: #94a3b840;
+  --color-border-active: #6366f1b2;
+  --color-border-disabled: #94a3b81a;
+
+  /* ---- state ---- */
+  --color-state-hover: #ffffff0d;
+  --color-state-active: #ffffff17;
+  --color-state-focus: #6366f133;
+  --color-state-selected: #6366f133;
+  --color-state-selected-subtle: #6366f11a;
+  --color-state-selected-grey: #94a3b81f;
+  --color-state-disabled: #ffffff08;
+  --color-state-highlight: #f59e0b47;
+
+  /* ---- brand & accent ---- */
+  --color-brand-primary: #ee6d0b;
+  --color-brand-primary-soft: #db833b;
+  --color-accent-interactive: #6366f1;
+  --color-accent-interactive-soft: #818cf8;
+  --color-accent-secondary: #06b6d4;
+  --color-accent-secondary-soft: #a5f3fc;
+
+  /* ---- semantic (status vs target) ---- */
+  --color-semantic-success: #10b981;
+  --color-semantic-success-soft: #6ee7b7;
+  --color-semantic-warning: #f59e0b;
+  --color-semantic-warning-soft: #fde68a;
+  --color-semantic-error: #ef4444;
+  --color-semantic-error-soft: #fca5a5;
+  --color-semantic-info: #3b82f6;
+
+  /* ---- controls ---- */
+  --color-control-thumb: #ffffff;
+  --color-control-thumb-muted: #cbd5e1;
+  --color-control-track: #ffffff33;
+  --color-control-track-disabled: #ffffff1a;
+  --color-control-segment: #0a0f1a;
+  --color-control-segment-hover: #ffffff14;
+
+  /* ---- scroll ---- */
+  --color-scroll-default: #ffffff40;
+  --color-scroll-muted: #ffffff1f;
+
+  /* ---- context bar ---- */
+  --color-context-icon: #cbd5e1;
+  --color-context-button: #cbd5e1;
+  --color-context-button-bg: #ffffff0d;
+  --color-context-tab-inactive: #94a3b8;
+  --color-context-tab-active: #f1f5f9;
+
+  /* ---- overlays (brand-led vs data-led views) ---- */
+  --color-overlay-table-row-hover-brand: #ee6d0b0f;
+  --color-overlay-ghost-pill-bg-brand: #ee6d0b1a;
+  --color-overlay-filter-bar-border-brand: #ee6d0b2e;
+  --color-overlay-select-border-brand: #ee6d0b40;
+  --color-overlay-select-border-hover-brand: #ee6d0b8c;
+  --color-overlay-table-row-hover-interactive: #6366f10f;
+  --color-overlay-ghost-pill-bg-interactive: #6366f11a;
+  --color-overlay-filter-bar-border-interactive: #6366f12e;
+  --color-overlay-select-border-interactive: #6366f140;
+  --color-overlay-select-border-hover-interactive: #6366f18c;
+  --color-overlay-filter-bar-bg: #0f172ad9;
+  --color-overlay-guide-example-bg: #0f172a66;
+
+  /* ---- category (data series identity ONLY) ---- */
+  --color-category-a-solid: #1d4ed8;
+  --color-category-a-chart: #3b82f6;
+  --color-category-b-solid: #9333ea;
+  --color-category-b-chart: #c084fc;
+  --color-category-c-solid: #0f766e;
+  --color-category-c-chart: #5eead4;
+
+  /* ---- rating ---- */
+  --color-rating-positive: #047857;
+  --color-rating-caution: #b45309;
+  --color-rating-negative: #b91c1c;
+
+  /* ---- table ---- */
+  --color-table-header: #0f172a;
+  --color-table-row-odd: #0f172b;
+  --color-table-row-even: #111a30;
+  --color-table-row-odd-pinned: #172035;
+  --color-table-row-even-pinned: #131c30;
+  --color-table-row-hover: #1e2a45;
+
+  /* ---- priority ---- */
+  --color-priority-critical: #ff4332;
+  --color-priority-high: #ee722a;
+  --color-priority-medium: #fecc32;
+  --color-priority-low: #a8ce00;
+  --color-priority-minimal: #1dc22b;
+
+  /* ---- marker ---- */
+  --color-marker-red: #ff031b;
+  --color-marker-orange: #ff9b28;
+  --color-marker-yellow: #ffff37;
+  --color-marker-green: #007416;
+  --color-marker-blue: #53a6cd;
+
+  /* ---- neutral ---- */
+  --color-neutral-white: #ffffff;
+  --color-neutral-grey: #656565;
+  --color-neutral-grey-green: #bfccd9;
+
+  /* ---- deprecated (kept for parity with the library; DO NOT USE) ---- */
+  --color-deprecated-blue: #3b82f6;
+  --color-deprecated-warning-orange: #fda228;
+  --color-deprecated-ana: #ff5a11;
+
+  /* ---- typography ---- */
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* ---- radii (from showcase: xs=2, controls=8, cards=12, pills=999) ---- */
+  --radius-xs: 2px;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+}
+
+/* Gradients are not Tailwind color tokens; exposed as plain custom properties.
+   From the Atomic Library "cards & gradients" section. */
+:root {
+  --gradient-brand: linear-gradient(160deg, #ee6d0b 0%, #db833b 71.429%);
+  --gradient-interactive: linear-gradient(162deg, #6366f1 0%, #06b6d4 71.429%);
+  --gradient-surface-elevation: linear-gradient(180deg, #0f172a 0%, #1a2540 100%);
+}
